@@ -104,25 +104,19 @@ export default {
     },
 
     enableMotion() {
-        console.log('2');
         return new Promise((resolve, reject) => {
-            console.log('3');
             if(navigator.permissions && navigator.permissions.query) {
-                console.log('4');
                 Promise.all([navigator.permissions.query({ name: "accelerometer" }),
                     navigator.permissions.query({ name: "gyroscope" })])
                 .then(results => {
-                    console.log("done");
                     resolve();
                 }).catch(err => {
                     console.log(err);
                     reject();
                 })
             } else if (DeviceOrientationEvent && DeviceOrientationEvent.requestPermission) {
-                console.log('5');
                 DeviceOrientationEvent.requestPermission()
                 .then((_result) => {
-                    console.log('6');
                     const msg = navigator.userAgent+'--'+JSON.stringify(_result);
                     reportService.report(msg);
                     resolve();
@@ -133,7 +127,6 @@ export default {
                     reject();
                 })
             } else {
-                console.log('resolve');
                 resolve();
             }
         });

@@ -1,5 +1,6 @@
 import QuestionComponent from "./components/QuestionComponent.js"
 import ResultComponent from "./components/ResultComponent.js"
+import StartGameComponent from "./components/StartGameComponent.js"
 import DataService from "./DataService.js"
 
 export default {
@@ -15,9 +16,8 @@ export default {
             }
         })
 
-        document.addEventListener("StartGame", () => {
-            this.initGame()
-        }) 
+        document.addEventListener("ShowStart", () => {StartGameComponent.show() }) 
+        document.addEventListener("StartGame", () => {this.initGame() }) 
     },
 
     fullscreen() {
@@ -35,5 +35,5 @@ export default {
     initGame() {
         DataService.resetResult()
         QuestionComponent.showQuestion()
-    }
+    },
 }

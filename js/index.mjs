@@ -1,13 +1,11 @@
 import PageService from "./PageService.js"
-import BroserCheckService from "./BrowserCheckService.js"
-
 
 function startup () {
 
     PageService.setup()
 
     setTimeout(() => {
-        document.dispatchEvent(new CustomEvent("StartGame"))
+        document.dispatchEvent(new CustomEvent("ShowStart"))
     }, 1000)
 }
 

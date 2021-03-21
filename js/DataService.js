@@ -2,12 +2,24 @@ export default {
 
     QUESTIONS: [
         {
-            text: "test question 1",
+            text: "Belle e Sebastien - Belle e' un cane da montagna?",
             answer: "YES"
         },
         {
-            text: "test question 2",
+            text: "L'arma di Lady Oscar e' il martello?",
             answer: "NO"
+        },
+        {
+            text: "Pollon e' la figlia di Apollo?",
+            answer: "YES"
+        },
+        {
+            text: "Spank e' un cane bulldog?",
+            answer: "NO"
+        },
+        {
+            text: "Si chiama Lana la ragazza che Conan trova e cura?",
+            answer: "YES"
         }
         
     ],

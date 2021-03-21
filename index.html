@@ -1,24 +1,32 @@
 <html>
   <head>
-    <script src="./libs/aframe.min.js"></script>
-    <script src="./libs/aframe-environment-component.js"></script>
+    <script src="libs/aframe.min.js"></script>
+    <script src="libs/aframe-environment-component.js"></script>
+    <script src="libs/aframe-gif-shader.js"></script>
     <link rel="stylesheet" href="./main.css" /> 
 </head>
   <body>
     <a-scene id="sceneContainer"
-        environment="preset: starry;" renderer="antialias: true;"
-        raycaster="objects: .clickable; useWorldCoordinates: false; origin: 0 2 3.5; direction: -0.18819173662480854 0.556812229372801 -0.8090389431214237"
-        cursor="rayOrigin: mouse" debug vr-mode-ui="enabled: false">
+        environment="preset: starry; ground: canyon; grid: none" renderer="antialias: true;"
+        raycaster="objects: .clickable; useWorldCoordinates: false; origin: 0 1 3.5; direction: -0.18819173662480854 0.556812229372801 -0.8090389431214237"
+        cursor="rayOrigin: mouse; fuseTimeout: 0;" debug vr-mode-ui="enabled: false">
 
         <a-assets>
+            <a-asset-item id="avatar-0" src="assets/avatars/1.gltf"></a-asset-item>
+            <a-asset-item id="avatar-1" src="assets/avatars/2.gltf"></a-asset-item>
+
             <img id="btn-yes" src="assets/buttons/yes.png"></img>
             <img id="btn-no" src="assets/buttons/no.png"></img>
             <img id="btn-restart" src="assets/buttons/restart.png"></img>
+            <img id="btn-start" src="assets/buttons/start.png"></img>
         </a-assets>
 
-        <a-entity id="rig" position="0 4 2.5" rotation="0 0 0">
+        <a-entity id="rig" position="0 4 3" rotation="0 0 0">
             <a-entity camera="active: true;" look-controls wasd-controls touch-look-controls="enabled: false"></a-entity>
         </a-entity>
+        <a-light id="directionalLight" color="#9fb4d1" intensity="4.5" castshadow="true" angle="45" 
+          groundcolor="#313131" type="directional" position="0 3.5 0" 
+          light="color: #9fb4d1; intensity: 4.5; angle: 3.43; type: point" visible=""></a-light>
     </a-scene>
     <a href="#" id="toggleFullscreen">
         <img src="assets/fullscreen.png">
